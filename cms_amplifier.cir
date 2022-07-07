@@ -1,0 +1,19 @@
+COMMON SOURCE AMPLIFIER
+Vdd 2 0 12
+C1 4 1 50u
+R1 2 1 1
+R2 1 0 2
+RD 2 3 5
+M1 3 1 0 0 n1
+.model n1 NMOS(LEVEL=49 VTHO=1 L=0.5u W=10u )
+Vin 4 0 sin(0 0.1 2k 0 0)
+.tran 50u 1m
+.control
+run
+set color0 = white
+set color1 = black
+set color1 = blue
+plot v(3) v(1)
+.endc
+.end
+

@@ -1,0 +1,22 @@
+NAND GATE
+Vdd 3 0 5
+Vin1 1 0 DC 0 PULSE(0 5 0 5ns 5ns 50ns 200ns)
+Vin2 4 0 DC 0 PULSE(0 5 0 5ns 5ns 100ns 200ns)
+m1p 2 1 3 3 p1
+.model p1 PMOS 10u
+m2p 2 4 3 3 p2
+.model p2 PMOS 10u
+m1n 2 1 5 5 n1
+.model n1 NMOS 10u
+m2n 5 4 0 0 n2
+.model n2 NMOS 10u
+.control
+run
+set color0 = white
+set color1 = black
+set color1 = blue
+plot v(2) vs Vin1 
+.endc
+.end
+
+

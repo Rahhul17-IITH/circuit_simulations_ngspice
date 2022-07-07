@@ -1,0 +1,22 @@
+Battery Charging with Full Wave Rectifier
+Vin 1 0 sin(0,34.7,50,0,0)
+D1 1 2 diode1
+D2 0 2 diode2
+D3 4 0 diode3
+D4 4 1 diode4
+.model diode1 D
+.model diode2 D
+.model diode3 D
+.model diode4 D
+R1 2 5 200
+V2 5 4 12
+.control
+tran 0.0000001 40m
+tran 0.0000001 40m
+set color0 = white
+set color1 = black
+set color1 = blue
+plot tran1.v(1) tran2.v(2)-v(4)
+plot I(V2)
+.endc
+.end

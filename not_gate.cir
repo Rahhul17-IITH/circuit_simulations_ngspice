@@ -1,0 +1,15 @@
+NOT GATE 
+Vdd 3 0 5
+.dc v(1) 0 5 0.1
+mp 2 1 3 3 p1
+.model p1 PMOS 10u
+mn 2 1 0 0 n1
+.model n1 NMOS 10u
+.control
+run
+set color0 = white
+set color1 = black
+set color1 = blue
+ plot v(2) vs v(1)
+.endc
+.end

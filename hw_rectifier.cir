@@ -1,0 +1,16 @@
+half wave rectifier
+Vin 1 0 sin(0,22,50,0,0)
+D1 1 2 diode1
+.model diode1 D
+R1 2 3 100
+V2 3 0 12
+.control
+tran 0.0000001 40m
+tran 0.0000001 40m
+set color0 = white
+set color1 = black
+set color1 = blue
+plot tran1.v(1) tran2.v(2)
+plot I(V2)
+.endc
+.end

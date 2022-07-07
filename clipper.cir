@@ -1,0 +1,16 @@
+clipper circuit
+Vin 1 4 sin(0,5,1k,0,0)
+R1 1 2 100
+DZ1 2 3 zener
+DZ2 4 3 zener
+.model zener D BV 0.8
+.model zener D BV 1.5
+.control
+tran 0.0000001 40m
+set color0 = white
+set color1 = black
+set color1 = blue
+plot tran.v(2)-v(4) 
+.endc
+.end
+

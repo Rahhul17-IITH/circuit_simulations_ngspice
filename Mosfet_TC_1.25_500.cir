@@ -1,0 +1,16 @@
+NMOSFET TRANSFER CHARACTERISTICS
+Vdd 4 0 1.25
+R1 2 3 1k
+Vid 4 3 0
+Vgg 1 0 
+m1 2 1 0 0 n1
+.model n1 NMOS (LEVEL=49 VTHO=0.5 L=500E-9 tox=5E-9) 
+.dc Vgg 0 5 0.1
+.control
+run
+set color0 = white
+set color1 = black
+set color1 = blue
+ plot I(Vid) vs V(1) 
+ .endc
+.end

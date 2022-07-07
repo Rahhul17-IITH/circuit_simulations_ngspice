@@ -1,0 +1,14 @@
+HIGH pass filter
+Vin 1 0 dc 0 ac 1
+R1 2 0 1k
+C1 1 2 2.45n
+
+.control
+ac dec 10 1 10Meg
+set color0 = white
+set color1 = black
+set color2 = blue
+set xbrushwidth = 5
+plot vdb(2) xlog ylabel 'Gain(db)'
+.endc
+.end  

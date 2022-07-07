@@ -1,0 +1,13 @@
+Vin 1 0 sin(0,5,1k,0,0)
+C1 1 2 5u
+D1 3 2 diode1
+.model diode1 D
+R1 2 3 10k
+.control
+tran 0.0000001 40m
+set color0 = white
+set color1 = black
+set color1 = blue
+plot tran.v(2)-v(3) 
+.endc
+.end
